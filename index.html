@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color Picker</title>
+    <link rel="stylesheet" type="text/css" href="assets/roboto/css/fontface.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="toolbuttons">
+        <div id="minbtn" class="btn">x</div>
+      </div>
+      <div class="material-color-picker">
+        <div class="material-color-picker__left-panel">
+          <ol class="color-selector" data-bind="foreach: materialColors">
+            <li>
+              <input
+                name="material-color"
+                type="radio"
+                data-bind="attr: { id: 'materialColor' + $index() }, checked: selectedColor, value: color"
+              />
+              <label
+                data-bind="attr: { for: 'materialColor' + $index(), title: color }, style: { 'color': $data.variations[4].hex }"
+              ></label>
+            </li>
+          </ol>
+        </div>
+        <div class="material-color-picker__right-panel" data-bind="foreach: materialColors">
+          <div class="color-palette-wrapper" data-bind="css: { 'js-active': selectedColor() === color }">
+            <h2 class="color-palette-header" data-bind="text: color"></h2>
+            <ol class="color-palette" data-bind="foreach: variations">
+              <li
+                id="clipboardItem"
+                class="color-palette__item"
+                data-bind="attr: { 'data-clipboard-text': hex }, style: { 'background-color': hex }"
+              >
+                <span data-bind="text: weight"></span> <span data-bind="text: hex"></span>
+                <span class="copied-indicator" data-bind="css: { 'js-copied': copiedHex() === hex }">Color copied!</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="nwinit.js"></script>
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js -->
+    <script type="text/javascript" src="knockout-min.js"></script>
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js -->
+    <script type="text/javascript" src="clipboard.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

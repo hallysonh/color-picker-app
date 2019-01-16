@@ -1,0 +1,37 @@
+{
+  "name": "color-picker",
+  "version": "1.0.0",
+  "description": "Material Color Picker",
+  "product_string": "Material Color Picker",
+  "main": "index.html",
+  "single-instance": false,
+  "window": {
+    "title": "Material Color Picker",
+    "icon": "icon.png",
+    "height": 792,
+    "min_height": 792,
+    "resizable": false,
+    "frame": false,
+    "always-on-top": true,
+    "visible-on-all-workspaces": true,
+    "show_in_taskbar": false,
+    "show": false
+  },
+  "scripts": {
+    "start": "run --x64 --mirror https://dl.nwjs.io/ .",
+    "build": "build --tasks win-x64 --mirror https://dl.nwjs.io/ .",
+    "build:all": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
+    "nw": "nw ."
+  },
+  "license": "MIT",
+  "author": "hallysonh@gmail.com",
+  "maintainers": [
+    {
+      "name": "Hallyson Almeida",
+      "email": "hallysonh@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "nwjs-builder-phoenix": "^1.15.0"
+  }
+}
