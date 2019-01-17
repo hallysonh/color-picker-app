@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Material Color Picker",
   "product_string": "Material Color Picker",
-  "main": "index.html",
+  "main": "src/index.html",
   "single-instance": false,
   "window": {
     "title": "Material Color Picker",
@@ -16,6 +16,12 @@
     "visible-on-all-workspaces": true,
     "show_in_taskbar": false,
     "show": false
+  },
+  "build": {
+    "win": {
+      "icon": "icon.ico"
+    },
+    "packed": true
   },
   "scripts": {
     "start": "run --x64 --mirror https://dl.nwjs.io/ .",
@@ -31,7 +37,7 @@
       "email": "hallysonh@gmail.com"
     }
   ],
-  "dependencies": {
+  "devDependencies": {
     "nwjs-builder-phoenix": "^1.15.0"
   }
 }
